@@ -283,8 +283,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\playerController.cs" />
-    <Compile Include="Assets\scripts\spikeTrap\spikeTrapAnimator.cs" />
-    <Compile Include="Assets\scripts\spikeTrap\spikeTrapCollider.cs" />
+    <Compile Include="Assets\scripts\RhythmicTrap.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

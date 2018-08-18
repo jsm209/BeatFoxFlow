@@ -11,7 +11,6 @@ public class playerController : MonoBehaviour {
     public LayerMask layer;
 
     private Rigidbody2D rb;
-    private Transform tf;
     private SpriteRenderer playerSprite; // The sprite of the player.
     private Animator anim; // The animator for the player.
 
@@ -32,7 +31,6 @@ public class playerController : MonoBehaviour {
     {
         // Setting up references...
         rb = GetComponent<Rigidbody2D>();
-        tf = GetComponent<Transform>();
         playerSprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
