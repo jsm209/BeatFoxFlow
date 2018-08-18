@@ -1,0 +1,7 @@
+Unity Questions
+What exactly are coroutines and IEnumerators?
+
+Why is it that to reference a child object, I reference the transform? Is the transform component obligatory for any unity object, that people use it interchangably to refer to the object?
+
+Why is finding a child GameObject "often easier to use Transform.find"? https://docs.unity3d.com/ScriptReference/GameObject.Find.html
+

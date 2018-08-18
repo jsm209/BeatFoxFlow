@@ -1,0 +1,42 @@
+DESIGN DOC
+"Beatfox" is a game that relies on rhythm and timing to defeat enemies and avoid traps.
+
+#################################
+# New implementation for traps! #
+#################################
+Dilemma: Spikes are becoming off time because of either a coding error or 
+because of some Unity process... either way there is a surefire solution to try.
+
+Solution: Implement a "beat manager" that every beat, will shoot out a trigger 
+to all the objects with a "heartBeat" tag or something. The trigger, probably 
+a line that calls a method of the object to "process beat", and the object 
+will react accordingly.
+
+#####################
+# PLANNED MECHANICS #
+#####################
+- The traps will form a percussion section, which when triggered, will be a sound.
+- The chords and melodies will form into stems which can be played randomly and interchangbly for dynamic music.
+- The overworld will be a final fantasy type overworld, with random encounters (visably avoidable though, so it's not annoying)
+  that result in a quick battle with random enemies on a random arena. The player will earn money this way.
+- There will be a total of 12 levels, 4 per region (northern woods, southern woods, central woods), where upon the completion of 3 levels
+  and its respective boss level, will award the player with one of the following abilities (double jump, dash, crawl, but maybe a crawl dash 
+  if the player has both...) that allows the player to progress through the game in different paths akin to BOTW.
+- The final boss can be accessed at any time by visiting the center of the map, however it will be built in a way that it wil be very hard to
+  defeat without the three abilities. This can be achieved with sheer difficulty with a boss rush of the bosses the player hasn't defeated yet.
+- Money can be spent on increasing hearts, refilling hearts, and increasing movement speed.
+End Goal:
+- This game will be finished when it has 12 levels, unlockable abilities, 3 bosses (final boss could just be a boss rush), dynamic music score,
+  an overworld, and a shop.
+
+################################
+# THINGS I NEED TO MAKE LEVELS #
+################################
+* aside from setting looking different...
+- Spike trap (closed hat)
+- Flame trap (open hat)
+- Crushing trap (kick drum)
+- Snapping Jaws (snare drum)
+- Enemy that patrols platform, only moving on active beats
+- Enemy that shoots something on active beats.
+- Enemy that flies, only moving on active beats

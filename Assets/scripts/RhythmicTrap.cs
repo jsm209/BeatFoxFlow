@@ -42,20 +42,20 @@ public class RhythmicTrap : MonoBehaviour {
     private void Start()
     {
         // Convert given beats to seconds.
-        activeBeatsInSeconds = convertBeatsToSeconds(activeBeats);
-        restBeatsInSeconds = convertBeatsToSeconds(restBeats);
-        pickupBeatsInSeconds = convertBeatsToSeconds(pickupBeats);
+        activeBeatsInSeconds = ConvertBeatsToSeconds(activeBeats);
+        restBeatsInSeconds = ConvertBeatsToSeconds(restBeats);
+        pickupBeatsInSeconds = ConvertBeatsToSeconds(pickupBeats);
 
         // Waits initial pickupBeats, if this trap is a rhythmic trap.
         if (isRhythmic)
         {
-            Invoke("ToggleAnimation", pickupBeatsInSeconds);
+            PickUp();
         }
     }
 
     // Given an amount of beats, will convert the beats to seconds depending on 
     // the current bpm and time per minute.
-    private float convertBeatsToSeconds(float beats)
+    private float ConvertBeatsToSeconds(float beats)
     {
         return (TIME_PER_MINUTE / bpm) * beats;
     }
@@ -105,5 +105,11 @@ public class RhythmicTrap : MonoBehaviour {
         ToggleAnimation();
         yield return new WaitForSeconds(restBeatsInSeconds);
         cycling = false;
+    }
+
+    IEnumerator PickUp()
+    {
+        yield return new WaitForSeconds(pickupBeatsInSeconds);
+        ToggleAnimation();
     }
 }
