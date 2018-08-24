@@ -91,7 +91,7 @@ public class RhythmicTrap : MonoBehaviour {
         animToggle = !animToggle;
         anim.SetBool(animStateName, animToggle);
         hitbox.enabled = animToggle;
-        Debug.Log("Trap is " + animToggle);
+        //Debug.Log("Trap is " + animToggle);
     }
 
     // Will begin a new oscillation cycle. It toggles the animation to active, 

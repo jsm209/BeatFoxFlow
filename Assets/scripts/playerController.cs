@@ -54,7 +54,7 @@ public class playerController : MonoBehaviour {
             }
             knockbackCount -= Time.deltaTime;
         }
-        
+
         setAnim();
     }
 

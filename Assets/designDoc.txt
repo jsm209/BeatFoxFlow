@@ -33,10 +33,10 @@ End Goal:
 # THINGS I NEED TO MAKE LEVELS #
 ################################
 * aside from setting looking different...
-- Spike trap (closed hat)
-- Flame trap (open hat)
-- Crushing trap (kick drum)
-- Snapping Jaws (snare drum)
+- Closed hat (thorn trap)
+- Open hat (Flame flower trap)
+- Kick Drum (ceiling plant that shoots a giant seed)
+- Snare (plant that whips vines outwards.)
 - Enemy that patrols platform, only moving on active beats
 - Enemy that shoots something on active beats.
 - Enemy that flies, only moving on active beats
