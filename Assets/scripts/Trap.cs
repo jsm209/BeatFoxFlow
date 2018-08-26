@@ -59,8 +59,10 @@ public class Trap : MonoBehaviour {
 
         if (lastBeatState != BeatManager.beatState)
         {
+            // Checks for pickup beats before doing anything.
             if (pickUpBeats < 1)
             {
+                // Resets beat back to 1 if the beatCode length is exceeded.
                 if (beat > beatCode.Length)
                 {
                     beat = 1;
@@ -84,8 +86,19 @@ public class Trap : MonoBehaviour {
 
         }
 
+        // Constantly checks for one shot animations, as in if the animation finished for
+        // an "active" state, we should end the triggered trap early.
+        /*
+        if (trapAnimationIsActive && WeFinishedTrapAnimation) {
+            TriggerTrap(false);
+        }
 
-	}
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName(animActiveStateAnimationName) && )
+        */
+
+
+
+    }
 
     // Given a bool that represents the state of the trap,
     // Will change the animation and enable/disable the collider accordingly.
@@ -93,5 +106,13 @@ public class Trap : MonoBehaviour {
     {
         anim.SetBool(animStateName, state);
         hitboxDanger.enabled = state;
+    }
+
+    // The purpose of explicitly making a function to disable the trap is
+    // necessary for the animation event to work when the "active" animation
+    // ends, because animation events cannot take booleans.
+    public void DeactivateEarly()
+    {
+        TriggerTrap(false);
     }
 }

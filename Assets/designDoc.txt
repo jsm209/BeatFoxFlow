@@ -12,13 +12,29 @@ to all the objects with a "heartBeat" tag or something. The trigger, probably
 a line that calls a method of the object to "process beat", and the object 
 will react accordingly.
 
+--DONE--
+
+##########################
+# PLAN TO FIX ANIMATIONS #
+##########################
+Dilemma: The animations keep looping throughout the time the beat is active.
+I want the trap to have a startup animation, an active animation, a cooldown animation,
+and an idle animation.
+
+Solution: Have the trap play startup animation when isTriggered is true, which has to be
+short enough (like 2 frames) that it will quickly lead into the active animation, then when
+isTriggered is false, it will leave the active animation into the cooldown animation, which
+leads into the idle animation. The idle animation will only proceed to the startup animation
+if isTriggered is true again.
+
 #####################
 # PLANNED MECHANICS #
 #####################
 - The traps will form a percussion section, which when triggered, will be a sound.
 - The chords and melodies will form into stems which can be played randomly and interchangbly for dynamic music.
 - The overworld will be a final fantasy type overworld, with random encounters (visably avoidable though, so it's not annoying)
-  that result in a quick battle with random enemies on a random arena. The player will earn money this way.
+  that result in a quick battle with random enemies on a random arena. The player will earn money this way. Player can flee by running
+  off to the side. The player fights by "biting" the enemies.
 - There will be a total of 12 levels, 4 per region (northern woods, southern woods, central woods), where upon the completion of 3 levels
   and its respective boss level, will award the player with one of the following abilities (double jump, dash, crawl, but maybe a crawl dash 
   if the player has both...) that allows the player to progress through the game in different paths akin to BOTW.
@@ -32,7 +48,7 @@ End Goal:
 ################################
 # THINGS I NEED TO MAKE LEVELS #
 ################################
-* aside from setting looking different...
+- sprites for changing scenary
 - Closed hat (thorn trap)
 - Open hat (Flame flower trap)
 - Kick Drum (ceiling plant that shoots a giant seed)
@@ -40,3 +56,10 @@ End Goal:
 - Enemy that patrols platform, only moving on active beats
 - Enemy that shoots something on active beats.
 - Enemy that flies, only moving on active beats
+--- SPRITES TO DRAW ---
+- toplayer grass sprite
+- groundlayer dirt sprite
+- tree trunk sprite
+- tree trunk tunnel sprite
+- branch sprite
+- enemy that patrols platform
