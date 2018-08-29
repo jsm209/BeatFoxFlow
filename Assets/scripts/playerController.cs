@@ -16,6 +16,8 @@ public class playerController : MonoBehaviour {
 
     [SerializeField] private float moveSpeed; // The speed the player travels.
     private bool facingRight = true;     // For determining which way the player is currently facing.
+    public float invulnerabilitySeconds;
+
     [SerializeField] private float jumpForce;
     public float groundCheckLength;
     public int vulnerability; // A multiplier for how far the player flies after being hit.
@@ -25,7 +27,6 @@ public class playerController : MonoBehaviour {
     public float knockbackLength; // A constant that tells player how much to be knocked back by every time.
     public float knockbackCount; // The current time remaining for knockback state. (player has no control)
     private bool knockbackFromRight; // Denotes the direction of knockback.
-    
 
     private void Awake()
     {
@@ -55,7 +56,7 @@ public class playerController : MonoBehaviour {
             knockbackCount -= Time.deltaTime;
         }
 
-        setAnim();
+        SetAnim();
     }
 
     // Checks if any keys are pushed, and if so, will apply the corresponding movement.
@@ -95,8 +96,12 @@ public class playerController : MonoBehaviour {
 
         if (other.gameObject.tag == "enemy")
         {
-            
-            knockbackCount = knockbackLength;
+            if (gameObject.GetComponent<playerHeartTracker>().health > 0)
+            {
+                ChangeHearts(-1);
+                StartCoroutine("Invulnerable");
+                knockbackCount = knockbackLength;
+            }
             Debug.Log("Hurt");
         }
 
@@ -128,7 +133,7 @@ public class playerController : MonoBehaviour {
     }
 
     // Checks the movement of the player and sets their animation accordingly.
-    private void setAnim()
+    private void SetAnim()
     {
         // Player will use walking animation if they have only horizontal movement.
         if (Mathf.Abs(rb.velocity.x) > 0 && Mathf.Abs(rb.velocity.y) == 0)
@@ -139,5 +144,29 @@ public class playerController : MonoBehaviour {
             anim.SetBool("isWalking", false);
         }
         
+    }
+
+    // Given an integer,
+    // Will change the player's heart tracker by the given amount.
+    private void ChangeHearts(int n)
+    {
+        gameObject.GetComponent<playerHeartTracker>().ChangeHealth(n);
+    }
+
+    // Will kill the player.
+    public void KillPlayer()
+    {
+        Debug.Log("PLAYER DIED.");
+    }
+
+    IEnumerator Invulnerable()
+    {
+        Debug.Log("PLAYER IS INVULNERABLE");
+        Physics2D.IgnoreLayerCollision(13, 16, true);
+        gameObject.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+        yield return new WaitForSeconds(invulnerabilitySeconds);
+        gameObject.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        Physics2D.IgnoreLayerCollision(13, 16, false);
+        yield return null;
     }
 }

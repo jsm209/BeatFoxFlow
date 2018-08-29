@@ -285,6 +285,7 @@
     <Compile Include="Assets\scripts\BeatManager.cs" />
     <Compile Include="Assets\scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\scripts\playerController.cs" />
+    <Compile Include="Assets\scripts\playerHeartTracker.cs" />
     <Compile Include="Assets\scripts\RhythmicTrap.cs" />
     <Compile Include="Assets\scripts\Trap.cs" />
   </ItemGroup>
