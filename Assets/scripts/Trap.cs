@@ -37,7 +37,9 @@ public class Trap : MonoBehaviour {
     public GameObject trapCollider;
 
     // The hitbox that is dangerous to the player. 
-    private BoxCollider2D hitboxDanger; 
+    private BoxCollider2D hitboxDanger;
+
+    private AudioSource trapAudio;
 
     private void Awake()
     {
@@ -47,6 +49,7 @@ public class Trap : MonoBehaviour {
         animStateName = "isTriggered";
 
         hitboxDanger = trapCollider.GetComponent<BoxCollider2D>();
+        trapAudio = gameObject.GetComponent<AudioSource>();
     }
 	
 	void Update () {
@@ -106,6 +109,10 @@ public class Trap : MonoBehaviour {
     {
         anim.SetBool(animStateName, state);
         hitboxDanger.enabled = state;
+        if (state)
+        {
+            trapAudio.PlayOneShot(trapAudio.clip, 1.0f);
+        }
     }
 
     // The purpose of explicitly making a function to disable the trap is

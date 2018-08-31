@@ -83,10 +83,19 @@ public class playerController : MonoBehaviour {
             }
         }
 
+        // If both movement keys have been released and we're on the ground,
+        // immediately stop moving.
+        if ((Input.GetKeyUp(KeyCode.D) || (Input.GetKeyUp(KeyCode.A))) && Grounded())
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
+
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && Grounded())
         {
             Jump();
         }
+
+        
     }
 
     // Checks when the player collides with another collider, and does several things:
@@ -135,14 +144,22 @@ public class playerController : MonoBehaviour {
     // Checks the movement of the player and sets their animation accordingly.
     private void SetAnim()
     {
-        // Player will use walking animation if they have only horizontal movement.
-        if (Mathf.Abs(rb.velocity.x) > 0 && Mathf.Abs(rb.velocity.y) == 0)
-        // if (Input.GetAxis("Horizontal") > 0)
+        if (!Grounded())
         {
-            anim.SetBool("isWalking", true);
+            anim.SetBool("isJumping", true);
         } else {
-            anim.SetBool("isWalking", false);
+            anim.SetBool("isJumping", false);
+            // Player will use walking animation if they have only horizontal movement and are grounded.
+            if (Mathf.Abs(rb.velocity.x) > 0 && Mathf.Abs(rb.velocity.y) == 0)
+            {
+                anim.SetBool("isWalking", true);
+            }
+            else
+            {
+                anim.SetBool("isWalking", false);
+            }
         }
+
         
     }
 
@@ -159,6 +176,8 @@ public class playerController : MonoBehaviour {
         Debug.Log("PLAYER DIED.");
     }
 
+    // Makes the player unable to collide with "enemy" layer, as well as turn 
+    // partially transparent for a given amount of time.
     IEnumerator Invulnerable()
     {
         Debug.Log("PLAYER IS INVULNERABLE");

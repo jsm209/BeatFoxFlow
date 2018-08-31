@@ -5,3 +5,5 @@ Why is it that to reference a child object, I reference the transform? Is the tr
 
 Why is finding a child GameObject "often easier to use Transform.find"? https://docs.unity3d.com/ScriptReference/GameObject.Find.html
 
+Is there a difference between gameObject.getcomponent and this.getcomponent?
+
