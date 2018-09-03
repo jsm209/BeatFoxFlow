@@ -16,11 +16,13 @@ public class playerController : MonoBehaviour {
 
     [SerializeField] private float moveSpeed; // The speed the player travels.
     private bool facingRight = true;     // For determining which way the player is currently facing.
-    public float invulnerabilitySeconds;
+    public float invulnerabilitySeconds; // How many seconds after being hit that the player has iframes.
 
-    [SerializeField] private float jumpForce;
-    public float groundCheckLength;
+    [SerializeField] private float jumpForce; // force player jumps with
+    public float groundCheckLength; // How far above the ground until the player is "touching" the ground.
     public int vulnerability; // A multiplier for how far the player flies after being hit.
+    public int maxJumps; // How many jumps the player has before having to touch the ground.
+    private int jumpCount; // How many times the player has jumped already.
 
     // Knockback
     public float knockback; // Amount of "force" of knockback applied for the duration of knockback.
@@ -34,12 +36,10 @@ public class playerController : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-    }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
+        // ...
+        jumpCount = 0;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -90,9 +90,10 @@ public class playerController : MonoBehaviour {
             rb.velocity = new Vector2(0, 0);
         }
 
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && Grounded())
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && (jumpCount < maxJumps))
         {
             Jump();
+            jumpCount++;
         }
 
         
@@ -102,7 +103,6 @@ public class playerController : MonoBehaviour {
     // If an enemy, will take damage and do knockback. 
     private void OnCollisionEnter2D(Collision2D other)
     {
-
         if (other.gameObject.tag == "enemy")
         {
             if (gameObject.GetComponent<playerHeartTracker>().health > 0)
@@ -120,6 +120,9 @@ public class playerController : MonoBehaviour {
         } else {
             knockbackFromRight = false;
         }
+
+        // Reset jumpCount back to zero for more jumps no matter what we collided with.
+        jumpCount = 0;
     }
 
     // Will flip the player's sprite, and change the stored direction the player is facing.
