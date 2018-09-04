@@ -9,51 +9,51 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1676638760255134}
+  m_RootGameObject: {fileID: 1497521209785820}
   m_IsPrefabParent: 1
---- !u!1 &1676638760255134
+--- !u!1 &1497521209785820
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4611487902681592}
-  - component: {fileID: 212222489738338502}
-  - component: {fileID: 61074462099021370}
+  - component: {fileID: 4366993420098848}
+  - component: {fileID: 212743655137329072}
+  - component: {fileID: 61864022643714066}
   m_Layer: 8
-  m_Name: Tree Trunk Tunnel
+  m_Name: Tree Trunk Body Branch Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4611487902681592
+--- !u!4 &4366993420098848
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1676638760255134}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -0.24, z: 0}
+  m_GameObject: {fileID: 1497521209785820}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.7359998, y: 1.862, z: 0.0703125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61074462099021370
+--- !u!61 &61864022643714066
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1676638760255134}
+  m_GameObject: {fileID: 1497521209785820}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 3a6d959908ef8ee498f857822c19fa73, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0993375}
+  m_Offset: {x: 0.019083023, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -64,14 +64,14 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3993783, y: 0.041324973}
+  m_Size: {x: 0.43697453, y: 0.24}
   m_EdgeRadius: 0
---- !u!212 &212222489738338502
+--- !u!212 &212743655137329072
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1676638760255134}
+  m_GameObject: {fileID: 1497521209785820}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -97,10 +97,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1038425551
-  m_SortingLayer: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 32598107bfdcc3f43b5b8a1a95beb33c, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 32598107bfdcc3f43b5b8a1a95beb33c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -168,7 +168,7 @@ public class playerController : MonoBehaviour {
 
     // Given an integer,
     // Will change the player's heart tracker by the given amount.
-    private void ChangeHearts(int n)
+    public void ChangeHearts(int n)
     {
         gameObject.GetComponent<playerHeartTracker>().ChangeHealth(n);
     }

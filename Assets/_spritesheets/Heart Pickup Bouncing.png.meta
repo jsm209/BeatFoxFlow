@@ -1,17 +1,19 @@
 fileFormatVersion: 2
-guid: 32598107bfdcc3f43b5b8a1a95beb33c
-timeCreated: 1535659959
+guid: 467b590cf6399424b83f02cec08cbf2a
+timeCreated: 1536038265
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Tree Trunk Parts_0
-    21300002: Tree Trunk Parts_1
-    21300004: Tree Trunk Parts_2
-    21300006: Tree Trunk Parts_3
-    21300008: Tree Trunk Parts_4
-    21300010: Tree Trunk Parts_5
-    21300012: Tree Trunk Parts_6
-    21300014: Tree Trunk Parts_7
+    21300000: Heart Pickup Bouncing_0
+    21300002: Heart Pickup Bouncing_1
+    21300004: Heart Pickup Bouncing_2
+    21300006: Heart Pickup Bouncing_3
+    21300008: Heart Pickup Bouncing_4
+    21300010: Heart Pickup Bouncing_5
+    21300012: Heart Pickup Bouncing_6
+    21300014: Heart Pickup Bouncing_7
+    21300016: Heart Pickup Bouncing_8
+    21300018: Heart Pickup Bouncing_9
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -88,13 +90,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tree Trunk Parts_0
+      name: Heart Pickup Bouncing_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 24
+        width: 8
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -102,13 +104,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Tree Trunk Parts_1
+      name: Heart Pickup Bouncing_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Heart Pickup Bouncing_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Heart Pickup Bouncing_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Heart Pickup Bouncing_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Heart Pickup Bouncing_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Heart Pickup Bouncing_6
       rect:
         serializedVersion: 2
         x: 48
         y: 0
-        width: 48
-        height: 24
+        width: 8
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,13 +188,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Tree Trunk Parts_2
+      name: Heart Pickup Bouncing_7
       rect:
         serializedVersion: 2
-        x: 96
+        x: 56
         y: 0
-        width: 48
-        height: 24
+        width: 8
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,13 +202,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Tree Trunk Parts_3
+      name: Heart Pickup Bouncing_8
       rect:
         serializedVersion: 2
-        x: 144
+        x: 64
         y: 0
-        width: 48
-        height: 24
+        width: 8
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,55 +216,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Tree Trunk Parts_4
+      name: Heart Pickup Bouncing_9
       rect:
         serializedVersion: 2
-        x: 192
+        x: 72
         y: 0
-        width: 48
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Tree Trunk Parts_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Tree Trunk Parts_6
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 48
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Tree Trunk Parts_7
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 48
-        height: 24
+        width: 8
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
