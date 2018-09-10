@@ -11,8 +11,46 @@ Solution: Implement a "beat manager" that every beat, will shoot out a trigger
 to all the objects with a "heartBeat" tag or something. The trigger, probably 
 a line that calls a method of the object to "process beat", and the object 
 will react accordingly.
-
 --DONE--
+
+#######################################
+# IMPLEMENTATION FOR PROCEDURAL MUSIC #
+#######################################
+Dilemma: Need a way to have music stay on beat, and be generated on the fly.
+
+Solution: Create a script called "musician" that takes in degrees 1-7 of a scale. These 7 slots are
+places to store either chords or individual notes that can be played to reflect I-VII.
+
+The script will use a queue of 2 dimensional arrays, where the arrays contain groups of 8 beats. 
+Each array might reflect a melodic passage or a chord progression, where each beat, that array
+of notes will be played:
+
+Example of one element in the queue:
+[ [2, 4, 6], [5, 7, 1], [1, 3, 5], [6, 1, 3], [2, 4, 6], [5, 7, 1], [1, 3, 5], [6, 1, 3] ]
+
+At any given time, the queue will always have two elements, where as soon as one leaves another is
+chosen based on the current situation. Therefore, everything will change in groups of 8 beats.
+
+Create another script, call "composer" full of 2D array "chunks", as a map where the key is the 
+name of the passage. Additionally, it should increase in intensity, such that the first index of 
+the map is a calm piece and the last (probably like 5th index) is a high intensity piece.  
+
+Each part will contain a "score" of music, such that the melody will have an arragement of 2d arrays,
+the chords will have an arrangement, and the bass will have an arrangement.
+
+These "composer" scripts will be assigned to a "musician" script to be played, where the musician script
+will have access to the 7 degrees of a scale.
+
+Depending on the amount of enemies on screen, the musician script will react accordingly when choosing a new
+element to load into the queue.
+
+Intensity levels:
+1 - No enemies on screen
+2 - 1 to 3 enemies on screen
+3 - 4 to 6 enemies on screen
+4 - 7 to 9 enemies on screen
+5 - 10+ enemies on screen
+
 
 ##########################
 # PLAN TO FIX ANIMATIONS #
@@ -63,3 +101,20 @@ End Goal:
 - tree trunk tunnel sprite
 - branch sprite
 - enemy that patrols platform
+
+##################################################
+# MINIMUM VIABLE PRODUCT FOR MUSIC GAME JAM 2018 #
+##################################################
+- ** Design 5 complete, challenging levels (1 day)
+- *** 7 enemies, (the 4 current plants + 3 enemies, one land, jumping, flying) (2 days)
+DONE - * procedurally generated music (1 day)
+DONE - ***** you can only jump on beat, and can fastfall on beat. Fastfalling on things
+		is the method of attack. (1 day)
+- ** main menu, gui, branding, touching up art, program music (1 day)
+		- white "shocks" for player impacts and jumps.
+		- grass tufts on ground
+		- danger1 = simple melodies, sparse major chords, conssance
+		- danger2 = faster melodies, somewhat sparse major chords
+		- danger3 = faster melodies, frequent minor chords, dissonance
+
+

@@ -103,6 +103,11 @@ public class Trap : MonoBehaviour {
 
     }
 
+    // Ensures that if the trap is ever destroyed, that it'll also kill the parent/collider.
+    void OnDestroy() {
+        Destroy(transform.parent.gameObject);
+    }
+
     // Given a bool that represents the state of the trap,
     // Will change the animation and enable/disable the collider accordingly.
     private void TriggerTrap(bool state)
