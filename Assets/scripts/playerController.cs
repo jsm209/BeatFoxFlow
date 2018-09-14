@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // TODO LIST:
 // Make check for player's direction to flip sprite one if statement outside of the movement... 
@@ -18,7 +19,8 @@ public class playerController : MonoBehaviour {
     [SerializeField] private float moveSpeed; // The speed the player travels.
     private bool facingRight = true;     // For determining which way the player is currently facing.
     public float invulnerabilitySeconds; // How many seconds after being hit that the player has iframes.
-    private bool fastFalling;
+    private bool fastFalling; // If the player is currently fastfalling.
+    private bool recovering; // If the player is currently recovering from invulnerability.
 
     // Jumping
     [SerializeField] private float jumpForce; // force player jumps with
@@ -26,12 +28,15 @@ public class playerController : MonoBehaviour {
     public int vulnerability; // A multiplier for how far the player flies after being hit.
     public int maxJumps; // How many jumps the player has before having to touch the ground.
     private int jumpCount; // How many times the player has jumped already.
+    public AudioClip jumpSound; // The sound the player makes when they jump.
+    public GameObject jumpEffect; // The jump effect that spawns when the player jumps.
 
     // Knockback
     public float knockback; // Amount of "force" of knockback applied for the duration of knockback.
     public float knockbackLength; // A constant that tells player how much to be knocked back by every time.
     public float knockbackCount; // The current time remaining for knockback state. (player has no control)
     private bool knockbackFromRight; // Denotes the direction of knockback.
+    public AudioClip hurtSound; // The sound the player makes when they get hurt.
 
     private void Awake()
     {
@@ -46,7 +51,7 @@ public class playerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (knockbackCount <= 0)
+        if (knockbackCount <= 0 && !recovering)
         {
             DoMovement();
         } else {
@@ -105,6 +110,8 @@ public class playerController : MonoBehaviour {
             if (BeatManager.valid) {
                 Jump();
                 jumpCount++;
+            } else {
+                Hurt();
             }
             
         }
@@ -112,9 +119,12 @@ public class playerController : MonoBehaviour {
         if ((Input.GetKeyDown(KeyCode.S)) && !Grounded()) 
         {
             if (BeatManager.valid) {
-                FastFall();
+                //FastFall();
             }
-            
+            else {
+                //Hurt();
+            }
+
         }
 
         
@@ -135,6 +145,10 @@ public class playerController : MonoBehaviour {
                 Hurt();
             }
             
+        }
+
+        if (other.gameObject.tag == "killbox") {
+            Reset();
         }
 
 
@@ -165,6 +179,8 @@ public class playerController : MonoBehaviour {
     // Makes the player jump.
     private void Jump ()
     {
+        AudioSource.PlayClipAtPoint(jumpSound, transform.position);
+        Instantiate(jumpEffect, transform.position, transform.rotation);
         rb.velocity = new Vector3(0, jumpForce, 0);
     }
 
@@ -196,10 +212,13 @@ public class playerController : MonoBehaviour {
     }
 
     private void Hurt() {
-        if (gameObject.GetComponent<playerHeartTracker>().health > 0) {
+        if (gameObject.GetComponent<playerHeartTracker>().health > 1) {
             ChangeHearts(-1);
+            AudioSource.PlayClipAtPoint(hurtSound, transform.position);
             StartCoroutine("Invulnerable");
             knockbackCount = knockbackLength;
+        } else {
+            Reset();
         }
         Debug.Log("Hurt");
     }
@@ -222,11 +241,18 @@ public class playerController : MonoBehaviour {
     IEnumerator Invulnerable()
     {
         Debug.Log("PLAYER IS INVULNERABLE");
+        recovering = true;
         Physics2D.IgnoreLayerCollision(13, 16, true);
         gameObject.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
         yield return new WaitForSeconds(invulnerabilitySeconds);
         gameObject.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         Physics2D.IgnoreLayerCollision(13, 16, false);
+        recovering = false;
         yield return null;
+    }
+
+    private void Reset() {
+        Scene loadedLevel = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(loadedLevel.buildIndex);
     }
 }

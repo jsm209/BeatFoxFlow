@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 82244947825454916}
   m_Layer: 0
   m_Name: Berry
-  m_TagString: Untagged
+  m_TagString: melody
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +84,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.18
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -166,13 +166,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatsPerProgression: 8
   sounds:
-  - {fileID: 8300000, guid: 1424fc0038200d94dbe4eb689e089f3c, type: 3}
-  - {fileID: 8300000, guid: 694e56d0d2791064d8d1674a29f16c6f, type: 3}
-  - {fileID: 8300000, guid: f82ae45f47ba0d249955588964984bee, type: 3}
-  - {fileID: 8300000, guid: 77456d767e124744dbcdd356f9abe16b, type: 3}
-  - {fileID: 8300000, guid: 9c91bdf305036614c9129b23741ca045, type: 3}
-  - {fileID: 8300000, guid: c6a716c10cb1883478126f1c2a34f4b0, type: 3}
-  - {fileID: 8300000, guid: 8efb635a200d89b42b9880fd60237557, type: 3}
+  - {fileID: 8300000, guid: 3ec07cebbca03414a975b7922a1cf9f5, type: 3}
+  - {fileID: 8300000, guid: 65a412aae7463244780c27801552c9b9, type: 3}
+  - {fileID: 8300000, guid: 596e2b77339e9984fa238f82c006bb65, type: 3}
+  - {fileID: 8300000, guid: 3ce530595288a104f9f39ae250cfd79e, type: 3}
+  - {fileID: 8300000, guid: 999422bb39b0aa14b8a5227782267d58, type: 3}
+  - {fileID: 8300000, guid: 988e5a928f7fb614b9164f4b036e8b34, type: 3}
+  - {fileID: 8300000, guid: 4e8caeb8a3831e94398380c682748a60, type: 3}
 --- !u!114 &114814372005841492
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -7,6 +7,7 @@ TagManager:
   - enemy
   - spike
   - melody
+  - killbox
   layers:
   - Default
   - TransparentFX

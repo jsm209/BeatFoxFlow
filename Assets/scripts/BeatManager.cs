@@ -55,7 +55,7 @@ public class BeatManager : MonoBehaviour {
 
             // Do beat
             currentBeat++;
-            Debug.Log("Sent beat " + currentBeat + " and beat is " + beatState);
+            //Debug.Log("Sent beat " + currentBeat + " and beat is " + beatState);
             beatState = !beatState;
 
             // Allows player to take a valid action slightly after the beat.

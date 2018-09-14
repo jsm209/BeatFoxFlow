@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_scenes/music test.unity
+- path: Assets/_scenes/level 3.unity
   isLoaded: 1
   isActive: 1

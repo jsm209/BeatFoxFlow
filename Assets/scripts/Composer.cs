@@ -26,35 +26,68 @@ public class Composer : MonoBehaviour {
 
 
         danger1Melodies.Add(new int[][] {
-            new int[] {3},
-            new int[] {0},
-            new int[] {2},
-            new int[] {3},
             new int[] {1},
-            new int[] {0},
-            new int[] {0},
-            new int[] {0},
-        });
-
-        danger1Melodies.Add(new int[][] {
-            new int[] {5},
-            new int[] {5},
-            new int[] {4},
-            new int[] {4},
             new int[] {3},
-            new int[] {0},
-            new int[] {3},
-            new int[] {0},
-        });
-
-        danger1Melodies.Add(new int[][] {
-            new int[] {1},
             new int[] {5},
-            new int[] {2},
-            new int[] {6},
-            new int[] {3},
             new int[] {7},
             new int[] {1},
+            new int[] {3},
+            new int[] {7},
+            new int[] {5},
+        });
+
+        danger1Melodies.Add(new int[][] {
+            new int[] {1},
+            new int[] {2},
+            new int[] {1},
+            new int[] {2},
+            new int[] {1},
+            new int[] {2},
+            new int[] {1},
+            new int[] {2},
+        });
+
+        danger1Melodies.Add(new int[][] {
+            new int[] {7},
+            new int[] {5},
+            new int[] {6},
+            new int[] {4},
+            new int[] {5},
+            new int[] {3},
+            new int[] {4},
+            new int[] {2},
+        });
+
+        danger1Melodies.Add(new int[][] {
+            new int[] {7},
+            new int[] {0},
+            new int[] {6},
+            new int[] {0},
+            new int[] {5},
+            new int[] {0},
+            new int[] {3},
+            new int[] {0},
+        });
+
+        danger1Melodies.Add(new int[][] {
+            new int[] {2},
+            new int[] {3},
+            new int[] {4},
+            new int[] {5},
+            new int[] {4},
+            new int[] {3},
+            new int[] {2},
+            new int[] {0},
+        });
+
+        danger1Melodies.Add(new int[][] {
+            new int[] {2},
+            new int[] {0},
+            new int[] {5},
+            new int[] {0},
+            new int[] {1},
+            new int[] {0},
+            new int[] {1},
             new int[] {0},
         });
 
@@ -78,6 +111,17 @@ public class Composer : MonoBehaviour {
             new int[] {3, 5, 6},
             new int[] {3, 5, 6},
             new int[] {3, 5, 6},
+        });
+
+        danger1Chords.Add(new int[][] {
+            new int[] {2, 4, 6},
+            new int[] {2, 4, 6},
+            new int[] {5, 7, 2},
+            new int[] {5, 7, 2},
+            new int[] {1, 3, 5},
+            new int[] {1, 3, 5},
+            new int[] {1, 3, 5},
+            new int[] {1, 3, 5},
         });
 
         repetoire.Add("danger1Melodies", danger1Melodies);

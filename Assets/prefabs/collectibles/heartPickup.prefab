@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 1
+  pickupSound: {fileID: 8300000, guid: 315bbd023122abc43a0fcc47cdcd449c, type: 3}
 --- !u!212 &212969913523467860
 SpriteRenderer:
   m_ObjectHideFlags: 1
