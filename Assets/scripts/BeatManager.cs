@@ -29,7 +29,7 @@ public class BeatManager : MonoBehaviour {
     private float bpmInSeconds;
 
     // Tracks the total number of beats so far.
-    private float currentBeat; 
+    [HideInInspector] public float currentBeat; 
 
     private void Awake()
     {

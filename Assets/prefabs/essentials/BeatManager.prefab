@@ -53,4 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   validBufferPre: 0.1
   validBufferPost: 0.15
-  bpm: 180
+  bpm: 160
+  currentBeat: 0

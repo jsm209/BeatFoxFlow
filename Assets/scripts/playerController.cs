@@ -34,7 +34,7 @@ public class playerController : MonoBehaviour {
     // Knockback
     public float knockback; // Amount of "force" of knockback applied for the duration of knockback.
     public float knockbackLength; // A constant that tells player how much to be knocked back by every time.
-    public float knockbackCount; // The current time remaining for knockback state. (player has no control)
+    private float knockbackCount; // The current time remaining for knockback state. (player has no control)
     private bool knockbackFromRight; // Denotes the direction of knockback.
     public AudioClip hurtSound; // The sound the player makes when they get hurt.
 
@@ -136,15 +136,17 @@ public class playerController : MonoBehaviour {
     {
         if (other.gameObject.tag == "enemy")
         {
-            if (fastFalling) 
-            {
+            Hurt(); 
+        }
+
+        if (other.gameObject.tag == "enemyMob") {
+            if (fastFalling) {
                 Destroy(other.gameObject);
             }
-            else 
-            {
+            else {
                 Hurt();
             }
-            
+
         }
 
         if (other.gameObject.tag == "killbox") {
@@ -212,13 +214,16 @@ public class playerController : MonoBehaviour {
     }
 
     private void Hurt() {
-        if (gameObject.GetComponent<playerHeartTracker>().health > 1) {
-            ChangeHearts(-1);
+        int playerHealth = gameObject.GetComponent<playerHeartTracker>().health;
+        if (playerHealth > 0) {
+            ChangeHearts(-1); 
             AudioSource.PlayClipAtPoint(hurtSound, transform.position);
-            StartCoroutine("Invulnerable");
             knockbackCount = knockbackLength;
-        } else {
-            Reset();
+            if (playerHealth == 1) { // playerHealth doesn't update when we change hearts.
+                KillPlayer();
+            } else {
+                StartCoroutine("Invulnerable");
+            }
         }
         Debug.Log("Hurt");
     }
@@ -233,6 +238,9 @@ public class playerController : MonoBehaviour {
     // Will kill the player.
     public void KillPlayer()
     {
+        gameObject.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.01f);
+        knockbackCount = 100;
+        StartCoroutine("Reset");
         Debug.Log("PLAYER DIED.");
     }
 
@@ -251,7 +259,8 @@ public class playerController : MonoBehaviour {
         yield return null;
     }
 
-    private void Reset() {
+    IEnumerator Reset() {
+        yield return new WaitForSeconds(1);
         Scene loadedLevel = SceneManager.GetActiveScene();
         SceneManager.LoadScene(loadedLevel.buildIndex);
     }

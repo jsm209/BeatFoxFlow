@@ -105,8 +105,8 @@ End Goal:
 ##################################################
 # MINIMUM VIABLE PRODUCT FOR MUSIC GAME JAM 2018 #
 ##################################################
-- ** Design 5 complete, challenging levels (1 day)
-- *** 7 enemies, (the 4 current plants + 3 enemies, one land, jumping, flying) (2 days)
+DONE - ** Design 5 complete, challenging levels (1 day)
+DONE *** 7 enemies, (the 4 current plants + 3 enemies, one land, jumping, flying) (2 days)
 DONE - * procedurally generated music (1 day)
 DONE - ***** you can only jump on beat, and can fastfall on beat. Fastfalling on things
 		is the method of attack. (1 day)

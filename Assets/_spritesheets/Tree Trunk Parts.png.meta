@@ -12,6 +12,7 @@ TextureImporter:
     21300010: Tree Trunk Parts_5
     21300012: Tree Trunk Parts_6
     21300014: Tree Trunk Parts_7
+    21300016: Tree Trunk Parts_8
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -190,6 +191,20 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 336
+        y: 0
+        width: 48
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tree Trunk Parts_8
+      rect:
+        serializedVersion: 2
+        x: 384
         y: 0
         width: 48
         height: 24

@@ -126,7 +126,7 @@ MonoBehaviour:
   facingRight: 0
   step: 0
   target: {fileID: 0}
-  speed: 0.2
+  speed: 0.4
   foundPlayer: 0
 --- !u!212 &212264601671853814
 SpriteRenderer:
